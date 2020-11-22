@@ -51,6 +51,17 @@ video {
     align-items: center;
 }
 
+.room_url {
+    background-color: black;
+    color: #f5f5ff;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 6px;
+}
+.room_url span {
+    color: #949494;
+}
+
 .main_controls {
     display: flex;
     background-color: rgb(31, 31, 31);
