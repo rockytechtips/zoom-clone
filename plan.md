@@ -24,3 +24,5 @@
 - git init
 - git add  .
 - git commit -m "Zoom Clone"
+- heroku create
+- git push heroku master
