@@ -43,7 +43,7 @@ navigator.mediaDevices
       }
     });
 
-    socket.on("createMessage", (message) => {      
+    socket.on("createMessage", (message) => {
       $(".messages").append(
         `<li class="message"><b>user</b><br/>${message}</li>`
       );
@@ -132,3 +132,9 @@ const setPlayVideo = () => {
   `;
   document.querySelector(".main__video_button").innerHTML = html;
 };
+
+//chat window toggle hide/unhide
+$(document).delegate("#chat-btn", "click", function () {
+  $(".main_left").toggleClass("active", 1000);
+  $(".main_right").toggleClass("active", 1000);
+});

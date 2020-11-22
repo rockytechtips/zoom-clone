@@ -21,17 +21,26 @@ video {
 }
 
 .main_left {
-    flex: 0.8;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
+.main_left.active {
+    flex: 0.8;
+}
+
 .main_right {
     flex: 0.2;
-    display: flex;
+    display: none;
     flex-direction: column;
     background-color: rgb(31, 31, 31);
     border-left: 1px solid #3D3D42;
+    transition: all 0.5s;
+}
+
+.main_right.active {
+    display: flex;
 }
 
 .main_videos {
@@ -124,6 +133,6 @@ video {
     list-style: none;
 }
 
-.unmute,.stop {
+.unmute, .stop {
     color: rgb(196, 30, 30);
 }
