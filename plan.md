@@ -22,4 +22,5 @@
 - npm install peer
 - npm install -g heroku
 - git init
-- git add
+- git add  .
+- git commit -m "Zoom Clone"

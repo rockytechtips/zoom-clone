@@ -7,7 +7,7 @@ myVideo.muted = true;
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: "3030",
+  port: "443",
 });
 
 let myVideoStream;
@@ -30,26 +30,20 @@ navigator.mediaDevices
     });
 
     socket.on("user-connected", (userId) => {
-      /* connectToNewUser(userId, stream);
-      console.log("userId:", userId); */
       setTimeout(function () {
         connectToNewUser(userId, stream);
       }, 1000);
     });
     let text = $("input");
-    /* let msg = $(".messages"); */
 
     $("html").keydown((e) => {
       if (e.which == 13 && text.val().length !== 0) {
-        /*console.log(text.val());
-    msg.html(text.val()); */
         socket.emit("message", text.val());
         text.val("");
       }
     });
 
-    socket.on("createMessage", (message) => {
-      console.log("Create message", message);
+    socket.on("createMessage", (message) => {      
       $(".messages").append(
         `<li class="message"><b>user</b><br/>${message}</li>`
       );
@@ -59,11 +53,9 @@ navigator.mediaDevices
 
 peer.on("open", (id) => {
   socket.emit("join-room", ROOM_ID, id);
-  console.log("id:", id, " room id:", ROOM_ID);
 });
 
 const connectToNewUser = (userId, stream) => {
-  console.log("new user connected", userId, "stream id:", stream);
   const call = peer.call(userId, stream);
 
   const video = document.createElement("video");
@@ -112,6 +104,7 @@ const setUnmuteButton = () => {
   document.querySelector(".main_mute_button").innerHTML = html;
 };
 
+//Stop our video
 const playStop = () => {
   console.log("object");
   let enabled = myVideoStream.getVideoTracks()[0].enabled;
