@@ -43,7 +43,7 @@ navigator.mediaDevices
       }
     });
 
-    socket.on("createMessage", (message) => {      
+    socket.on("createMessage", (message) => {
       $(".messages").append(
         `<li class="message"><b>user</b><br/>${message}</li>`
       );
@@ -132,3 +132,26 @@ const setPlayVideo = () => {
   `;
   document.querySelector(".main__video_button").innerHTML = html;
 };
+
+//chat window toggle hide/unhide
+$(document).delegate("#chat-btn", "click", function () {
+  $(".main_left").toggleClass("active", 1000);
+  $(".main_right").toggleClass("active", 1000);
+});
+
+//display room url
+var roomUrl = window.location.href;
+const html = `<h6>Room id: <span>${roomUrl}</span></h6>`;
+document.querySelector(".room_url").innerHTML = html;
+
+const copyText = document.querySelector(".room_url span");
+copyText.onclick = function () {
+  document.execCommand("copy");
+};
+copyText.addEventListener("copy", function (event) {
+  event.preventDefault();
+  if (event.clipboardData) {
+    event.clipboardData.setData("text/plain", copyText.textContent);
+    alert("Room id copied!!!");
+  }
+});

@@ -21,17 +21,26 @@ video {
 }
 
 .main_left {
-    flex: 0.8;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
+.main_left.active {
+    flex: 0.8;
+}
+
 .main_right {
     flex: 0.2;
-    display: flex;
+    display: none;
     flex-direction: column;
     background-color: rgb(31, 31, 31);
     border-left: 1px solid #3D3D42;
+    transition: all 0.5s;
+}
+
+.main_right.active {
+    display: flex;
 }
 
 .main_videos {
@@ -40,6 +49,17 @@ video {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.room_url {
+    background-color: black;
+    color: #f5f5ff;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 6px;
+}
+.room_url span {
+    color: #949494;
 }
 
 .main_controls {
@@ -124,6 +144,6 @@ video {
     list-style: none;
 }
 
-.unmute,.stop {
+.unmute, .stop {
     color: rgb(196, 30, 30);
 }
