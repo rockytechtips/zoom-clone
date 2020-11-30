@@ -3,15 +3,15 @@ body {
     padding: 0;
 }
 
-/* 
 #video-grid {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
- */
 
 video {
-    height: 300px;
-    width: 400px;
+    width: 320px;
     object-fit: cover;
 }
 
@@ -26,23 +26,6 @@ video {
     flex-direction: column;
 }
 
-.main_left.active {
-    flex: 0.8;
-}
-
-.main_right {
-    flex: 0.2;
-    display: none;
-    flex-direction: column;
-    background-color: rgb(31, 31, 31);
-    border-left: 1px solid #3D3D42;
-    transition: all 0.5s;
-}
-
-.main_right.active {
-    display: flex;
-}
-
 .main_videos {
     flex-grow: 1;
     background-color: black;
@@ -52,12 +35,17 @@ video {
 }
 
 .room_url {
-    background-color: black;
+    background-color: #1f1f1f;
     color: #f5f5ff;
     font-size: 14px;
     text-align: center;
-    padding-top: 6px;
+    padding: 6px;
 }
+
+.room_url h6 {
+    margin: 0;
+}
+
 .room_url span {
     color: #949494;
 }
@@ -91,10 +79,6 @@ video {
 .main_controls_button:hover {
     background-color: #343434;
     border-radius: 5px;
-}
-
-.leave_meeting {
-    color: rgb(196, 30, 30);
 }
 
 .main_header {
@@ -146,4 +130,70 @@ video {
 
 .unmute, .stop {
     color: rgb(196, 30, 30);
+}
+
+.chatbar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbar a {
+    text-decoration: none;
+    color: #818181;
+}
+
+.chatbar a:hover {
+    color: #f1f1f1;
+}
+
+.chatbar .closebtn {
+    position: absolute;
+    top: -5px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media only screen and (max-width: 1024px) {
+    video {
+        width: 320px;
+    }
+    .main_controls_button i, span {
+        font-size: 16px;
+    }
+    .main_controls_button {
+        min-width: 47px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    video {
+        width: 210px;
+    }
+    .main_controls_button i, span {
+        font-size: 16px;
+    }
+    .main_controls_button span {
+        display: none;
+    }
+    .main_controls_button.leave_meeting span {
+        display: block;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    video {
+        width: 160px;
+    }
 }
