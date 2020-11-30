@@ -16,9 +16,9 @@ app.use("/peerjs", peerServer);
 app.get("/", (req, res) => {
   res.redirect(`/${uuid4()}`);
 });
-app.get("/home", (req, res) => {
+/* app.get("/home", (req, res) => {
   res.render("index");
-});
+}); */
 
 app.get("/:room", (req, res) => {
   res.render("room", { roomId: req.params.room });
@@ -34,4 +34,4 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(process.env.PORT||3030);
+server.listen(process.env.PORT || 3030);
