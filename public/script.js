@@ -23,7 +23,7 @@ navigator.mediaDevices
     peer.on("call", (call) => {
       call.answer(stream);
       const video = document.createElement("video");
-      console.log("video", video);
+      /* console.log("video", video); */
       call.on("stream", (userVideoStream) => {
         addVideoStream(video, userVideoStream);
       });
@@ -106,7 +106,7 @@ const setUnmuteButton = () => {
 
 //Stop our video
 const playStop = () => {
-  console.log("object");
+  /* console.log("object"); */
   let enabled = myVideoStream.getVideoTracks()[0].enabled;
   if (enabled) {
     myVideoStream.getVideoTracks()[0].enabled = false;
@@ -134,10 +134,10 @@ const setPlayVideo = () => {
 };
 
 //chat window toggle hide/unhide
-$(document).delegate("#chat-btn", "click", function () {
+/* $(document).delegate("#chat-btn", "click", function () {
   $(".main_left").toggleClass("active", 1000);
   $(".main_right").toggleClass("active", 1000);
-});
+}); */
 
 //display room url
 var roomUrl = window.location.href;
@@ -155,3 +155,11 @@ copyText.addEventListener("copy", function (event) {
     alert("Room id copied!!!");
   }
 });
+
+//chat window toggle hide/unhide
+function openNav() {
+  document.getElementById("mySidenav").style.width = "320px";
+}
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}

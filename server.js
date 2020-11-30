@@ -16,6 +16,9 @@ app.use("/peerjs", peerServer);
 app.get("/", (req, res) => {
   res.redirect(`/${uuid4()}`);
 });
+app.get("/home", (req, res) => {
+  res.render("index");
+});
 
 app.get("/:room", (req, res) => {
   res.render("room", { roomId: req.params.room });
