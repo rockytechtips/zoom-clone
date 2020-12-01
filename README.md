@@ -40,10 +40,10 @@ Open http://localhost:3030 to view it in the browser.
 
 ## Screenshot
 
-![main screen img](https://i.imgur.com/a6D6Ya0.jpg "main screen")
+![main screen img](https://s3.amazonaws.com/awesomescreenshot/image/1663621/5743634-5789f68b430efaf479704727ca44aeb2.png?AWSAccessKeyId=AKIAJSCJQ2NM3XLFPVKA&Expires=1606823913&Signature=GvGTGEc6VoJ4xiAQBKhEZCN4pwg%3D "main screen")
 
 #### Chat window toggle added
-![Chat window toggle img](https://1.bp.blogspot.com/-UZFVe4RpbTs/X7qca6JIp8I/AAAAAAAAGzA/VO4ucZF1-WMnmvUEzjBbZxgLKOuFiBRcgCNcBGAsYHQ/s0/Toggle_chat_window.gif "Chat window toggle")
+![Chat window toggle img](https://s3.amazonaws.com/awesomescreenshot/image/1663621/5743652-d2629f18cda3580b06af4b9a0efb046a.png?AWSAccessKeyId=AKIAJSCJQ2NM3XLFPVKA&Expires=1606824161&Signature=3wABh0xhju08OTgmvmpjlUgnCLE%3D "Chat window toggle")
 
 #### Room id clipboard added
 ![Room id clipboard img](https://1.bp.blogspot.com/-kKN2X5Sg6lw/X7qcbO5rCbI/AAAAAAAAGzE/iSnobWbSzx4WShoiNRrwiwwt7bpFWRVWQCNcBGAsYHQ/s0/room-id-clipboard.gif "Room id clipboard")
